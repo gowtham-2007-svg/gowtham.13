@@ -1,31 +1,52 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Code2, GraduationCap, Clock } from 'lucide-react';
+import { Trophy, Code2, GraduationCap, Clock, Sparkles, CheckCircle2 } from 'lucide-react';
+import DotPattern from './DotPattern';
 
 const JourneyAndAchievements = () => {
   const versionJourney = [
     {
       version: "v1.1",
-      period: "2024",
-      title: "Weekend Explore v1.1",
-      stage: "Initial Launch",
-      description: "Initial version of the product with the core Weekend Explore experience.",
+      title: "Discover",
+      subtitle: "Discover more than just popular places.",
+      highlights: [
+        "Explore hidden and unexplored places.",
+        "Discover unique local destinations.",
+        "Find hidden gems around your location.",
+        "Discover live local food offers.",
+        "Explore live business offers.",
+        "Stay updated with live local events and activities."
+      ],
+      motto: "Discover Hidden Places. Find Local Gems. Catch Live Offers & Events.",
       status: "Completed"
     },
     {
       version: "v1.2",
-      period: "2024",
-      title: "Weekend Explore v1.2",
-      stage: "UI Refinement",
-      description: "Improved features, refined the UI, and enhanced the overall user experience.",
-      status: "Completed"
+      title: "AI-Powered Weekend Planning",
+      subtitle: "Your personal AI agent for weekend planning.",
+      highlights: [
+        "Plan your weekends using an AI agent.",
+        "Generate personalized weekend itineraries.",
+        "Plan according to your budget.",
+        "Get recommendations based on your interests.",
+        "Choose destinations based on your location.",
+        "Plan according to your available time.",
+        "Discover relevant places and experiences through one intelligent planning experience."
+      ],
+      motto: "Your Budget. Your Interests. Your Weekend. Planned by AI.",
+      status: "90% Completed"
     },
     {
       version: "v1.3",
-      period: "",
-      title: "Weekend Explore v1.3",
-      stage: "Currently Building",
-      description: "Current development version focused on improving the platform, adding better experiences, and expanding Weekend Explore.",
+      title: "Refined Experience",
+      subtitle: "An improved and more seamless Weekend Explore experience.",
+      highlights: [
+        "Enhanced discovery and planning experience.",
+        "Improved user experience.",
+        "Better accessibility and navigation.",
+        "A more refined platform experience."
+      ],
+      motto: "Explore More. Plan Better. Experience Every Weekend.",
       status: "Currently Building"
     }
   ];
@@ -38,53 +59,152 @@ const JourneyAndAchievements = () => {
           
           {/* LEFT: Weekend Explore Product Journey */}
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-violet-600"></span>
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-500">Product Journey</span>
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-500">Our Product Journey</span>
             </div>
-            <h2 className="text-3xl font-extrabold tracking-tight text-neutral-900 mb-10">
+            
+            <h2 className="text-3xl font-extrabold tracking-tight text-neutral-900 mb-2">
               Weekend Explore Timeline
             </h2>
 
+            {/* Journey Philosophy & Roadmap Banner */}
+            <div className="mb-10 p-6 rounded-3xl bg-white border border-neutral-200/80 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-500/5 rounded-full blur-2xl pointer-events-none"></div>
+              
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                <div>
+                  <span className="text-xs font-extrabold tracking-widest uppercase text-violet-600">
+                    Discover &bull; Plan &bull; Explore
+                  </span>
+                  <h3 className="text-base font-bold text-neutral-900 mt-1 italic">
+                    &ldquo;Every Weekend Has a Story. Let's Explore Yours&rdquo;
+                  </h3>
+                </div>
+                <span className="self-start sm:self-auto px-3 py-1 rounded-full bg-violet-100/70 text-violet-800 font-bold text-[10px] uppercase tracking-wider">
+                  Evolution
+                </span>
+              </div>
+
+              {/* 3 Step Evolution Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-neutral-100">
+                <div className="p-3.5 rounded-2xl bg-emerald-50/40 border border-emerald-100/70">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+                      1
+                    </span>
+                    <span className="font-bold text-neutral-900 text-xs">v1.1 – Discover</span>
+                  </div>
+                  <p className="text-[11px] text-neutral-600 font-medium pl-8">Hidden gems & offers</p>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-indigo-50/40 border border-indigo-100/70">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+                      2
+                    </span>
+                    <span className="font-bold text-neutral-900 text-xs">v1.2 – Plan With AI</span>
+                  </div>
+                  <p className="text-[11px] text-indigo-700 font-medium pl-8">AI Agent Itineraries</p>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-neutral-100/70 border border-neutral-200/70">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-6 h-6 rounded-lg bg-neutral-800 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
+                      3
+                    </span>
+                    <span className="font-bold text-neutral-900 text-xs">v1.3 – Experience</span>
+                  </div>
+                  <p className="text-[11px] text-neutral-600 font-medium pl-8">Refined Platform</p>
+                </div>
+              </div>
+            </div>
+
             {/* Timeline */}
-            <div className="relative pl-6 border-l-2 border-neutral-200/80 space-y-12 ml-2">
+            <div className="relative pl-6 md:pl-8 border-l-2 border-neutral-200/80 space-y-10 ml-2">
               {versionJourney.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="relative"
                 >
                   {/* Timeline bullet */}
-                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-neutral-900 shadow-sm flex items-center justify-center">
-                    <span className={`w-1.5 h-1.5 rounded-full ${item.status === 'Currently Building' ? 'bg-violet-600 animate-ping' : 'bg-neutral-950'}`}></span>
+                  <span className="absolute -left-[31px] md:-left-[39px] top-7 w-4 h-4 rounded-full bg-white border-2 border-neutral-900 shadow-sm flex items-center justify-center">
+                    <span className={`w-1.5 h-1.5 rounded-full ${
+                      item.status === 'Currently Building'
+                        ? 'bg-violet-600 animate-ping'
+                        : item.status === '90% Completed'
+                        ? 'bg-indigo-600 animate-pulse'
+                        : 'bg-emerald-600'
+                    }`}></span>
                   </span>
 
-                  <div className="flex items-center gap-3 mb-2">
-                    {item.period && (
-                      <span className="inline-block px-3 py-1 bg-white border border-neutral-100 rounded-full text-xs font-semibold text-neutral-500 shadow-sm">
-                        {item.period}
-                      </span>
-                    )}
-                    {item.status === 'Currently Building' && (
-                      <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-violet-50 border border-violet-100 text-[9px] font-bold uppercase tracking-wider text-violet-600">
-                        <span className="w-1 h-1 rounded-full bg-violet-600 animate-pulse"></span>
-                        Currently Building
-                      </span>
-                    )}
-                  </div>
+                  {/* High-Readability Card Container */}
+                  <div className="p-6 md:p-7 rounded-3xl bg-white border border-neutral-200/80 shadow-sm hover:shadow-md transition-shadow duration-200">
+                    
+                    {/* Header Row: Version Badge + Title + Status */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-neutral-100">
+                      <div className="flex items-center gap-2.5">
+                        <span className="px-2.5 py-1 rounded-lg bg-neutral-900 text-white font-mono text-xs font-bold tracking-wide">
+                          {item.version}
+                        </span>
+                        <h3 className="text-xl font-extrabold text-neutral-900 tracking-tight">
+                          {item.title}
+                        </h3>
+                      </div>
 
-                  <h3 className="text-lg font-bold text-neutral-900 mb-1">
-                    {item.title}
-                  </h3>
-                  <h4 className="text-xs font-bold text-violet-600 uppercase tracking-wider mb-3">
-                    {item.stage}
-                  </h4>
-                  <p className="text-sm text-neutral-500 font-normal leading-relaxed max-w-xl">
-                    {item.description}
-                  </p>
+                      <div>
+                        {item.status === 'Completed' && (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/60 text-xs font-bold uppercase tracking-wider text-emerald-700">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                            Completed
+                          </span>
+                        )}
+                        {item.status === '90% Completed' && (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200/60 text-xs font-bold uppercase tracking-wider text-indigo-700">
+                            <span className="w-2 h-2 rounded-full bg-indigo-600 animate-pulse"></span>
+                            90% Completed
+                          </span>
+                        )}
+                        {item.status === 'Currently Building' && (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-50 border border-violet-200/60 text-xs font-bold uppercase tracking-wider text-violet-700">
+                            <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse"></span>
+                            Currently Building
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Subtitle / Description */}
+                    <p className="text-base font-semibold text-neutral-800 mb-4 leading-snug">
+                      {item.subtitle}
+                    </p>
+
+                    {/* Feature Highlights */}
+                    <div className="p-4 rounded-2xl bg-neutral-50/80 border border-neutral-100 mb-4">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 mb-3">
+                        Key Features & Capabilities
+                      </p>
+                      <ul className="space-y-2.5">
+                        {item.highlights.map((point, pIdx) => (
+                          <li key={pIdx} className="flex items-start gap-2.5 text-sm text-neutral-700 font-normal leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-2 shrink-0"></span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Motto Footer */}
+                    <div className="pt-3 border-t border-neutral-100 flex items-center gap-2 text-xs md:text-sm font-semibold text-violet-950 italic">
+                      <Sparkles className="w-4 h-4 text-violet-600 shrink-0" />
+                      <span>&ldquo;{item.motto}&rdquo;</span>
+                    </div>
+
+                  </div>
                 </motion.div>
               ))}
             </div>

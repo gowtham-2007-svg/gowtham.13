@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
+import DotPattern from './DotPattern';
 
 const Testimonials = () => {
   const testimonials = [
@@ -36,7 +37,14 @@ const Testimonials = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       
       {/* Decorative dots pattern */}
-      <div className="absolute top-1/2 left-[5%] -translate-y-1/2 opacity-15 w-24 h-24 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+      <DotPattern 
+        className="absolute top-1/2 left-[5%] -translate-y-1/2 opacity-35 pointer-events-none" 
+        rows={6} 
+        cols={6} 
+        gap={18} 
+        radius={2} 
+        color="#94a3b8" 
+      />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         

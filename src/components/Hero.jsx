@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, ArrowUpRight, Download, Briefcase, Code2, Users, Trophy, Star } from 'lucide-react';
+import { Mail, ArrowUpRight, Download, Briefcase, Code2, Users, Trophy, Star, Sparkles, Lightbulb } from 'lucide-react';
+import DotPattern from './DotPattern';
 import portraitImg from '../assets/portrait.png';
 import heroBg from '../assets/hero_bg.png';
 
@@ -68,16 +69,23 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       ></div>
       
-      {/* Background Dots Pattern */}
-      <div className="absolute top-24 left-[10%] opacity-20 w-24 h-24 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-      
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
         
         {/* Left Column: Details + Embedded Stats + Embedded Tech */}
-        <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1 pt-4 lg:pt-0">
+        <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1 pt-4 lg:pt-0 relative">
           
+          {/* Decorative Dot Matrix in top-left (Matching reference design) */}
+          <DotPattern 
+            className="absolute -top-12 -left-6 sm:-left-8 opacity-75 z-0" 
+            rows={6} 
+            cols={8} 
+            gap={18} 
+            radius={2} 
+            color="#94a3b8" 
+          />
+
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-100 bg-white shadow-sm w-fit mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-neutral-100 bg-white shadow-sm w-fit mb-5 relative z-10">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="text-[10px] font-bold tracking-wider uppercase text-neutral-500">Available for new opportunities</span>
           </div>
@@ -172,7 +180,7 @@ const Hero = () => {
           </div>
 
           {/* FLOATING TECHNOLOGIES ROW (Matching reference layout) */}
-          <div className="bg-white border border-neutral-100/80 rounded-2xl px-6 py-4 shadow-sm max-w-2xl w-full flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <div className="bg-white border border-neutral-100/80 rounded-2xl px-6 py-4 shadow-sm max-w-2xl w-full flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mb-5">
             <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest shrink-0">
               Technologies I Work With
             </span>
@@ -189,11 +197,115 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* CONTENT CREATOR – ASPIRING ENTREPRENEURS CARD */}
+          <div className="bg-white border border-neutral-200/80 rounded-3xl p-6 shadow-sm max-w-2xl w-full">
+            <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-violet-600"></span>
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-neutral-500">
+                  Content Creator &bull; Aspiring Entrepreneurs
+                </span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-violet-50 text-violet-700 font-bold text-[9px] uppercase tracking-wider border border-violet-100 flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-violet-600" />
+                  Initiative
+                </span>
+
+                {/* Instagram Profile Badge Button */}
+                <a 
+                  href="https://www.instagram.com/aspi_ringentrepreneur/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-[10px] font-bold tracking-wide shadow-sm hover:opacity-95 hover:shadow-md hover:scale-105 transition-all duration-200 group"
+                  title="Visit @aspi_ringentrepreneur on Instagram"
+                >
+                  <InstagramIcon className="w-3.5 h-3.5 text-white stroke-[2.5]" />
+                  <span>@aspi_ringentrepreneur</span>
+                  <ArrowUpRight className="w-3 h-3 text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+            </div>
+
+            <h4 className="text-base font-extrabold text-neutral-900 mb-1 flex items-center gap-2 flex-wrap">
+              <span>Founder & Content Creator</span>
+              <span className="text-neutral-300 font-light text-sm hidden sm:inline">|</span>
+              <a 
+                href="https://www.instagram.com/aspi_ringentrepreneur/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-violet-600 hover:text-pink-600 transition-colors font-bold inline-flex items-center gap-1.5 group"
+                title="Open Aspiring Entrepreneurs Instagram"
+              >
+                <span>Aspiring Entrepreneurs</span>
+                <span className="w-5 h-5 rounded-md bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform">
+                  <InstagramIcon className="w-3 h-3 text-white stroke-[2.5]" />
+                </span>
+              </a>
+            </h4>
+
+            <p className="text-xs md:text-sm text-neutral-600 font-medium mb-4 leading-relaxed">
+              Creating content focused on the real journey of entrepreneurship.
+            </p>
+
+            <div className="p-3.5 rounded-2xl bg-neutral-50/80 border border-neutral-100 mb-4">
+              <ul className="space-y-2">
+                {[
+                  "Sharing the realities of being an entrepreneur.",
+                  "Exploring how entrepreneurs think, feel and make decisions.",
+                  "Discussing entrepreneurial challenges and survival strategies.",
+                  "Helping aspiring entrepreneurs understand the mindset behind building a business.",
+                  "Developing storytelling, content research and communication skills."
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-xs text-neutral-700 leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-1.5 shrink-0"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider block mb-2">
+                Additional Skills
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  "Content Creation",
+                  "Entrepreneurship Mindset",
+                  "Storytelling",
+                  "Creative Communication",
+                  "Content Research",
+                  "Personal Branding",
+                  "Digital Content Strategy"
+                ].map((skill, sIdx) => (
+                  <span 
+                    key={sIdx}
+                    className="px-2.5 py-1 text-[10px] font-semibold text-neutral-700 bg-white border border-neutral-200/80 rounded-lg shadow-sm hover:border-violet-300 transition-colors"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Right Column: Correct Portrait + Background Monogram */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end items-center relative order-1 lg:order-2 py-4">
           
+          {/* Decorative Dot Matrix behind portrait */}
+          <DotPattern 
+            className="absolute -bottom-8 -right-6 opacity-60 z-0 hidden sm:block" 
+            rows={6} 
+            cols={8} 
+            gap={18} 
+            radius={2} 
+            color="#94a3b8" 
+          />
+
           {/* Subtle Serif Monogram backdrop behind portrait */}
           <div 
             style={{ 

@@ -47,7 +47,24 @@ const CurrentlyBuilding = () => {
                 {/* v1.1 */}
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
-                    <span className="text-white font-semibold">Weekend Explore v1.1</span>
+                    <span className="text-white font-semibold">Weekend Explore v1.1 – Discover</span>
+                    <span className="text-emerald-400">100% Done</span>
+                  </div>
+                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '100%' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full"
+                    />
+                  </div>
+                </div>
+
+                {/* v1.2 */}
+                <div>
+                  <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
+                    <span className="text-white font-semibold">Weekend Explore v1.2 – Plan with AI</span>
                     <span className="text-violet-400">90% Done</span>
                   </div>
                   <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
@@ -61,27 +78,10 @@ const CurrentlyBuilding = () => {
                   </div>
                 </div>
 
-                {/* v1.2 */}
-                <div>
-                  <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
-                    <span className="text-white font-semibold">Weekend Explore v1.2</span>
-                    <span className="text-violet-400">20% Done</span>
-                  </div>
-                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      whileInView={{ width: '20%' }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-violet-600 to-indigo-500 rounded-full"
-                    />
-                  </div>
-                </div>
-
                 {/* v1.3 */}
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
-                    <span className="text-white font-semibold">Weekend Explore v1.3</span>
+                    <span className="text-white font-semibold">Weekend Explore v1.3 – Experience Better</span>
                     <span className="text-violet-400">20% Done</span>
                   </div>
                   <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
