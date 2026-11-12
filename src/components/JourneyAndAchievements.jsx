@@ -38,15 +38,17 @@ const JourneyAndAchievements = () => {
     },
     {
       version: "v1.3",
-      title: "Refined Experience",
-      subtitle: "An improved and more seamless Weekend Explore experience.",
+      title: "Platform Expansion & Local Business Collaboration",
+      subtitle: "Focusing on expanding the platform across Bengaluru, Mangaluru, Mysuru, and Manipal, while currently prioritising development and improvements in Mangaluru.",
       highlights: [
-        "Enhanced discovery and planning experience.",
-        "Improved user experience.",
-        "Better accessibility and navigation.",
-        "A more refined platform experience."
+        "Multi-City Expansion: Developing the weekend-planning experience for all four locations (Bengaluru, Mangaluru, Mysuru, and Manipal).",
+        "Local Business Collaboration: Building partnerships with local restaurants, food outlets, retail stores, and other businesses.",
+        "Business Offers Integration: Allowing partner businesses to share their discounts, deals, and special offers directly on Weekend Explore.",
+        "Digital Business Visibility: Helping local businesses reach more potential customers through the platform.",
+        "Enhanced AI Weekend Planner: Improving personalised weekend recommendations based on users' budgets, interests, locations, and available time.",
+        "Improved User Experience: Enhancing platform functionality, performance, and mobile accessibility."
       ],
-      motto: "Explore More. Plan Better. Experience Every Weekend.",
+      motto: "Vision: Transform Weekend Explore into a connected platform that brings people, weekend experiences, and local businesses together.",
       status: "Currently Building"
     }
   ];
@@ -113,9 +115,9 @@ const JourneyAndAchievements = () => {
                     <span className="w-6 h-6 rounded-lg bg-neutral-800 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">
                       3
                     </span>
-                    <span className="font-bold text-neutral-900 text-xs">v1.3 – Experience</span>
+                    <span className="font-bold text-neutral-900 text-xs">v1.3 – Expansion</span>
                   </div>
-                  <p className="text-[11px] text-neutral-600 font-medium pl-8">Refined Platform</p>
+                  <p className="text-[11px] text-neutral-600 font-medium pl-8">Multi-city & Local Partners</p>
                 </div>
               </div>
             </div>
@@ -189,12 +191,26 @@ const JourneyAndAchievements = () => {
                         Key Features & Capabilities
                       </p>
                       <ul className="space-y-2.5">
-                        {item.highlights.map((point, pIdx) => (
-                          <li key={pIdx} className="flex items-start gap-2.5 text-sm text-neutral-700 font-normal leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-2 shrink-0"></span>
-                            <span>{point}</span>
-                          </li>
-                        ))}
+                        {item.highlights.map((point, pIdx) => {
+                          const hasColon = point.includes(': ');
+                          if (hasColon) {
+                            const [label, ...rest] = point.split(': ');
+                            return (
+                              <li key={pIdx} className="flex items-start gap-2.5 text-sm text-neutral-700 font-normal leading-relaxed">
+                                <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-2 shrink-0"></span>
+                                <span>
+                                  <strong className="font-semibold text-neutral-900">{label}:</strong> {rest.join(': ')}
+                                </span>
+                              </li>
+                            );
+                          }
+                          return (
+                            <li key={pIdx} className="flex items-start gap-2.5 text-sm text-neutral-700 font-normal leading-relaxed">
+                              <span className="w-1.5 h-1.5 rounded-full bg-violet-600 mt-2 shrink-0"></span>
+                              <span>{point}</span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
 

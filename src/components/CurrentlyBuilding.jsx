@@ -81,10 +81,10 @@ const CurrentlyBuilding = () => {
                 {/* v1.3 */}
                 <div>
                   <div className="flex items-center justify-between text-xs font-bold text-neutral-400 uppercase tracking-wider mb-2">
-                    <span className="text-white font-semibold">Weekend Explore v1.3 – Experience Better</span>
+                    <span className="text-white font-semibold">Weekend Explore v1.3 – Expansion & Local Business Collab</span>
                     <span className="text-violet-400">20% Done</span>
                   </div>
-                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5">
+                  <div className="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden border border-neutral-800 p-0.5 mb-2">
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: '20%' }}
@@ -93,6 +93,9 @@ const CurrentlyBuilding = () => {
                       className="h-full bg-gradient-to-r from-violet-600 to-indigo-500 rounded-full"
                     />
                   </div>
+                  <p className="text-[11px] text-neutral-400 font-medium leading-relaxed">
+                    Expanding across <span className="text-violet-300">Bengaluru</span>, <span className="text-emerald-400 font-semibold">Mangaluru (Prioritised)</span>, <span className="text-violet-300">Mysuru</span> &amp; <span className="text-violet-300">Manipal</span> with local business partnerships &amp; offers integration.
+                  </p>
                 </div>
               </div>
 
